@@ -1,0 +1,27 @@
+
+p	java:S116"TRename this field "NTPButton" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œá›¯8»£ò¯Æ1
+ž
+java:S1186'"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰ãÂÜ8»£ò¯Æ1
+I
+java:S11721",Remove this unused method parameter "event".(ˆùžç8Ä£ò¯Æ1
+X	java:S1256"<This block of commented-out lines of code should be removed.(ºÀ›˜8§Áö®Æ1
+X	java:S125>"<This block of commented-out lines of code should be removed.(­Þé·8ñÓö®Æ1
+X	java:S125@"<This block of commented-out lines of code should be removed.(ÿÂûÉ8ý±÷®Æ1
+W	java:S125B"<This block of commented-out lines of code should be removed.(“¡¡@8óý¨°Æ1
+]	java:S125F"<This block of commented-out lines of code should be removed.(”ûû‰þÿÿÿÿ8íï­°Æ1
+L
+java:S20935"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8Ô£ò¯Æ1
+I
+java:S1172W",Remove this unused method parameter "event".(À¢ÂØ8Ö£ò¯Æ1
+O
+java:S1135e"2Complete the task associated to this TODO comment.(˜âÅ»8Û£ò¯Æ1
+]
+java:S1128"@Remove this unused import 'org.apache.commons.net.ntp.TimeInfo'.(ÂºÃÁ8¥ˆñŒÉ1
+S
+java:S1128"1Remove this unused import 'java.net.InetAddress'.(ë³ƒÒÿÿÿÿÿ8¥ˆñŒÉ1
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8¥ˆñŒÉ1
+J
+java:S1128"-Remove this unused import 'java.time.ZoneId'.( Æ½“8¥ˆñŒÉ1
+\
+java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8¥ˆñŒÉ1

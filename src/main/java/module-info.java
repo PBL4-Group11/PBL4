@@ -11,6 +11,8 @@ module com.example.demo {
 //    requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires org.apache.commons.net;
+    requires java.desktop;
 //    requires mysql.connector.j;
 
     opens com.example.demo1 to javafx.fxml;

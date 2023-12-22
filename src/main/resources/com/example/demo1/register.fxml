@@ -53,7 +53,7 @@
             <TextField fx:id="usernameReg" layoutX="196.0" layoutY="126.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter your username" />
             <TextField fx:id="passwordReg" layoutX="196.0" layoutY="172.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter your password" />
             <TextField fx:id="confPasswordReg" layoutX="196.0" layoutY="218.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter your confirm password" />
-            <Button fx:id="registerBtn" alignment="CENTER" layoutX="173.0" layoutY="291.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #5454ee;" text="Register" textFill="WHITE">
+            <Button fx:id="registerBtn" alignment="CENTER" layoutX="173.0" layoutY="291.0" mnemonicParsing="false" onAction="#register" onKeyPressed="#registerButton" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #5454ee;" text="Register" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

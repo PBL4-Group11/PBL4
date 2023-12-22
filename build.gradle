@@ -35,6 +35,8 @@ javafx {
 }
 
 dependencies {
+    implementation 'commons-net:commons-net:3.10.0'
+
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
 

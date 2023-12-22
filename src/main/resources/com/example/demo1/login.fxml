@@ -39,7 +39,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField id="username" fx:id="username" layoutX="135.0" layoutY="112.0" prefHeight="25.0" prefWidth="271.0" promptText="Enter your username">
+            <TextField id="username" fx:id="username" layoutX="135.0" layoutY="112.0" prefHeight="25.0" prefWidth="271.0" onKeyPressed="#loginButton" promptText="Enter your username">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -49,8 +49,8 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <PasswordField id="password" fx:id="password" layoutX="135.0" layoutY="160.0" prefHeight="25.0" prefWidth="271.0" promptText="Enter your password" />
-            <Button id="loginBtn" fx:id="loginBtn" layoutX="168.0" layoutY="224.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="22.0" prefWidth="107.0" style="-fx-background-color: #5454ee;" stylesheets="@login.css" text="Login" textFill="WHITE">
+            <PasswordField id="password" fx:id="password" layoutX="135.0" layoutY="160.0" prefHeight="25.0" prefWidth="271.0" onKeyPressed="#loginButton" promptText="Enter your password" />
+            <Button id="loginBtn" fx:id="loginBtn" layoutX="168.0" layoutY="224.0" mnemonicParsing="false" onAction="#userLogin" onKeyPressed="#loginButton" prefHeight="22.0" prefWidth="107.0" style="-fx-background-color: #5454ee;" stylesheets="@login.css" text="Login" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
