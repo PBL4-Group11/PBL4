@@ -49,9 +49,27 @@ public class DBUtils {
         }
     }
 
+    public boolean isExist(String username){
+        Connection connection = connect2DB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "SELECT * FROM `user` WHERE `username` = ?");
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+
+    }
+
     public void register(String username, String password){
         Connection connection = connect2DB();
         try {
+
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "INSERT INTO `user` (username, password) VALUES (? , ?)");
             preparedStatement.setString(1, username);

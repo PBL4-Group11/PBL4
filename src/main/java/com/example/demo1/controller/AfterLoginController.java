@@ -1,6 +1,7 @@
 package com.example.demo1.controller;
 
 import com.example.demo1.HelloApplication;
+import com.example.demo1.model.Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,25 +52,12 @@ public class AfterLoginController implements Initializable {
         NTPButton.setDisable(true);
         NTPUDPClient client = new NTPUDPClient();
         try {
-//            client.open();
-//            InetAddress address = InetAddress.getByName("pool.ntp.org");
-//            TimeInfo timeInfo = client.getTime(address);
-//
-//            long serverTime = timeInfo.getMessage().getTransmitTimeStamp().getTime();
             long localTime = System.currentTimeMillis();
-
-            // Synchronized time = Local time + Server time - Request time
-//            long synchronizedTime = localTime + (serverTime - timeInfo.getReturnTime());
-
-//            System.out.println("Synchronized time: " + synchronizedTime);
+            System.out.println(localTime);
             Date realTime = new Date(localTime); // Chuyển đổi thành đối tượng Date
-//            LocalDateTime localDateTime = LocalDateTime.ofInstant(realTime.toInstant(), ZoneId.systemDefault());
-//            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss");
-
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-//            System.out.println(realTime);
             System.out.println(dateFormat.format(realTime)); // In ra thời gian thực
-            textArea.appendText("Real time: " + dateFormat.format(realTime) + "\n");
+            textArea.appendText("Current time: " + dateFormat.format(realTime) + "\n");
             NTPButton.setStyle("-fx-background-color: #5454ee");
             NTPButton.setDisable(false);
         } catch (Exception e) {
@@ -86,6 +74,9 @@ public class AfterLoginController implements Initializable {
 
     public void userLogOut(ActionEvent event) {
         HelloApplication m = new HelloApplication();
+        Session session = Session.getInstance();
+        session.clearSession();
+        System.out.println(session.getCurrentUser());
         m.changeSceneLogin("login.fxml");
 
     }
@@ -100,5 +91,11 @@ public class AfterLoginController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // TODO document why this method is empty
 
+    }
+
+    @FXML
+    public void timeDifference(ActionEvent event) {
+        NTPTimeSync ntpTimeSync = new NTPTimeSync();
+        textArea.appendText(ntpTimeSync.timeDifference());
     }
 }

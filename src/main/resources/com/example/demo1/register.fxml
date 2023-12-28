@@ -19,7 +19,7 @@
                   <Image url="@image/pc-icon-32251.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="253.0" prefHeight="46.0" prefWidth="120.0" text="NTP/SNTP" textFill="#fcfcfc">
+            <Label alignment="CENTER" layoutX="10.0" layoutY="253.0" prefHeight="46.0" prefWidth="120.0" text="NTP" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

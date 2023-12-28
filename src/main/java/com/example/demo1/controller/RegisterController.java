@@ -50,6 +50,8 @@ public class RegisterController implements Initializable {
         DBUtils dbUtils = new DBUtils();
         if (usernameReg.getText().isEmpty() || passwordReg.getText().isEmpty() || confPasswordReg.getText().isEmpty()) {
             errorReg.setText("Please enter your data.");
+        } else if (dbUtils.isExist(usernameReg.getText())) {
+            errorReg.setText("Username existed.");
         } else if (passwordReg.getText().equals(confPasswordReg.getText())) {
             errorReg.setText("Success!");
             dbUtils.register(usernameReg.getText(), passwordReg.getText());

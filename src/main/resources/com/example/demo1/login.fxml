@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.LoginController">
    <left>
       <AnchorPane prefHeight="315.0" prefWidth="150.0" style="-fx-background-color: #5454ee;" BorderPane.alignment="CENTER">
          <children>
@@ -20,7 +20,7 @@
                   <Image url="@image/pc-icon-32251.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="19.0" layoutY="235.0" prefHeight="18.0" prefWidth="113.0" style="-fx-color: white;" text="NTP/SNTP" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="19.0" layoutY="235.0" prefHeight="18.0" prefWidth="113.0" style="-fx-color: white;" text="NTP" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>

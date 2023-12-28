@@ -1,6 +1,7 @@
 package com.example.demo1;
 
 import com.example.demo1.controller.AfterLoginController;
+import com.example.demo1.model.Session;
 import com.example.demo1.model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -33,13 +34,17 @@ public class HelloApplication extends Application {
 
     }
 
-    public void changeSceneWelcome(String fxml, String username) {
+    public void changeSceneWelcome(String fxml, String username, String password) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource(fxml));
             Parent pane = (Parent) loader.load();
             AfterLoginController afterLoginController = loader.getController();
-            afterLoginController.welcomeName(username);
+            User user = new User(username, password);
+            Session session = Session.getInstance();
+            session.setCurrentUser(user);
+            afterLoginController.welcomeName(session.getCurrentUser().getUsername());
+            System.out.println(session.getCurrentUser().getUsername());
             stg.setResizable(false);
             stg.setTitle("Welcome!");
 
@@ -68,7 +73,7 @@ public class HelloApplication extends Application {
 
             stg.setScene(new Scene(pane, 800, 600));
             stg.show();
-            User user = new User(username);
+//            User user = new User(username);
             System.out.println(user.getUsername());
 
         } catch (Exception e) {

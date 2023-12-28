@@ -15,7 +15,7 @@ import javafx.scene.input.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
+public class LoginController implements Initializable {
     DBUtils dbUtils = new DBUtils();
     @FXML
     private TextField username;
@@ -27,9 +27,16 @@ public class HelloController implements Initializable {
     private Label wrongLogin;
     @FXML
     private Button registerBtn;
+    public boolean isScreenChanged = false;
 
     @FXML
     private void loginButton(KeyEvent event) {
+        loginBtn.setOnKeyPressed(event1 -> {
+            if (event1.getCode() == KeyCode.ENTER) {
+                // Handle Enter key press
+                loginBtn.fire(); // Simulate button click
+            }
+        });
         if (event.getCode().equals(KeyCode.ENTER)
                 || event.getCharacter().getBytes()[0] == '\n'
                 || event.getCharacter().getBytes()[0] == '\r') {
@@ -45,7 +52,7 @@ public class HelloController implements Initializable {
             boolean flag = dbUtils.checkLogin(username.getText(), password.getText());
             if (flag) {
                 wrongLogin.setText("Success!");
-                m.changeSceneWelcome("afterLogin.fxml", username.getText());
+                m.changeSceneWelcome("afterLogin.fxml", username.getText(), password.getText());
             } else {
                 wrongLogin.setText("Wrong username or password!");
             }
@@ -74,6 +81,16 @@ public class HelloController implements Initializable {
             focusPreviousTextField();
         } else if (keyCode == KeyCode.DOWN) {
             focusNextTextField();
+        } else if (keyCode == KeyCode.ENTER) {
+            if (!isScreenChanged) {
+                isScreenChanged = true;
+                checkLogin();
+                System.out.println(isScreenChanged);
+                System.out.println("Switching to another screen...");
+            } else {
+                System.out.println(isScreenChanged);
+                System.out.println("Performing action on the second screen...");
+            }
         }
     }
 
@@ -91,6 +108,7 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        isScreenChanged = false;
         username.setOnKeyPressed(this::handleArrowKeys);
         password.setOnKeyPressed(this::handleArrowKeys);
     }

@@ -13,7 +13,7 @@
 
 <BorderPane fx:id="loggedin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.AfterLoginController">
    <top>
-        <AnchorPane prefHeight="89.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="89.0" prefWidth="800.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="logout" layoutX="701.0" layoutY="22.0" mnemonicParsing="false" onAction="#userLogOut" prefHeight="28.0" prefWidth="85.0" style="-fx-background-color: #5454ee;" text="Log out" textFill="WHITE">
                     <font>
@@ -31,13 +31,21 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </Label>
+            <Label fx:id="welcomeLabel1" alignment="CENTER" layoutX="14.0" layoutY="22.0" prefHeight="32.0" prefWidth="253.0" text="NTP Time Synchronizing">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </Label>
             </children>
         </AnchorPane>
    </top>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-                <ImageView fitHeight="100.0" fitWidth="98.0" layoutX="351.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="270.0" fitWidth="188.0" layoutX="306.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@image/pc-icon-32251.png" />
                     </image>
@@ -58,13 +66,21 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="TimeDifference" layoutX="323.0" layoutY="240.0" mnemonicParsing="false" onAction="#timeDifference" prefHeight="31.0" prefWidth="154.0" style="-fx-background-color: #5454ee;" text="Time difference" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </center>
    <bottom>
       <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="696.0" BorderPane.alignment="CENTER">
          <content>
-            <TextArea fx:id="textArea" editable="false" maxWidth="-Infinity" prefHeight="198.0" prefWidth="796.0" style="-fx-background-color: grey;" wrapText="true">
+            <TextArea fx:id="textArea" editable="false" maxWidth="-Infinity" prefHeight="198.0" prefWidth="796.0" style="-fx-background-color: lightgrey;" wrapText="true">
                <font>
                   <Font size="13.0" />
                </font>
