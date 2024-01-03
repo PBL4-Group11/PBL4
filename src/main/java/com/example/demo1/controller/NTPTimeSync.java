@@ -57,7 +57,7 @@ public class NTPTimeSync {
             TimeInfo timeInfo = client.getTime(address);
             long serverTime = timeInfo.getMessage().getTransmitTimeStamp().getTime();
             long localTime = System.currentTimeMillis();
-            long synchronizedTime = localTime + (serverTime - timeInfo.getReturnTime());
+            long synchronizedTime = localTime + (serverTime - timeInfo.getReturnTime()) + 7300L;
             Date realTime = new Date(synchronizedTime);
 
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -148,11 +148,6 @@ public class NTPTimeSync {
         NTPUDPClient timeClient = new NTPUDPClient();
         InetAddress inetAddress;
         try {
-//            timeClient.open();
-//            inetAddress = InetAddress.getByName("0.pool.ntp.org"); // Thay đổi địa chỉ máy chủ NTP nếu cần thiết
-//
-//            TimeInfo timeInfo = timeClient.getTime(inetAddress);
-//            long returnTime = timeInfo.getReturnTime();
             long returnTime = getTimeFromNTP();
             long systemTime = System.currentTimeMillis();
             long offset = returnTime - systemTime;

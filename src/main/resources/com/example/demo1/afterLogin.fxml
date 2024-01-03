@@ -74,6 +74,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="clearLog" layoutX="20.0" layoutY="21.0" mnemonicParsing="false" onAction="#clearLog" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: #5454ee;" text="Clear log" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </center>

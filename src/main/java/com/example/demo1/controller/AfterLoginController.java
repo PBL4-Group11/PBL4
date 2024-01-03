@@ -84,18 +84,21 @@ public class AfterLoginController implements Initializable {
     @FXML
     public void synchronizeTime(ActionEvent event) {
         NTPTimeSync ntpTimeSync = new NTPTimeSync();
-        textArea.appendText("Đã đồng bộ thời gian lúc " + ntpTimeSync.timeSync() + "\n");
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // TODO document why this method is empty
-
+        textArea.appendText("Time synchronized at " + ntpTimeSync.timeSync() + "\n");
     }
 
     @FXML
     public void timeDifference(ActionEvent event) {
         NTPTimeSync ntpTimeSync = new NTPTimeSync();
         textArea.appendText(ntpTimeSync.timeDifference());
+    }
+
+    public void clearLog(ActionEvent event) {
+        textArea.clear();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }
